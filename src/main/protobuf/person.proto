@@ -5,9 +5,9 @@ package scala;
 import "validate/validate.proto";
 
 message Person {
-  uint64 id    = 1 [(validate.rules).uint64.gt    = 999];
+  uint64 id    = 1 [(validate.rules).uint64.lt    = 999];
 
-  string email = 2 [(validate.rules).string.email = true];
+  string email = 2;
 
   string name  = 3 [(validate.rules).string = {
                       pattern:   "^[^[0-9]A-Za-z]+( [^[0-9]A-Za-z]+)*$",

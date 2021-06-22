@@ -18,26 +18,26 @@ object Json extends Model {
           |        "id",
           |        "email",
           |        "name",
-          |        "location"
+          |        "home"
           |    ],
           |    "properties": {
           |        "id": {
           |            "id": "#/properties/id",
-          |            "minimum": 999,
+          |            "maximum": 999,
           |            "type": "integer"
           |        },
           |        "email": {
           |            "id": "#/properties/email",
-          |            "pattern": "@",
           |            "type": "string"
           |        },
           |        "name": {
           |            "id": "#/properties/name",
           |            "maxLength": 256,
+          |            "pattern": "^[^[0-9]A-Za-z]+( [^[0-9]A-Za-z]+)*$",
           |            "type": "string"
           |        },
-          |        "location": {
-          |            "id": "#/properties/location",
+          |        "home": {
+          |            "id": "#/properties/home",
           |            "required": [
           |                "lat",
           |                "lng"
@@ -45,7 +45,7 @@ object Json extends Model {
           |            "type": "object",
           |            "properties": {
           |                "lat": {
-          |                    "id": "#/properties/location/properties/lat",
+          |                    "id": "#/properties/home/properties/lat",
           |                    "exclusiveMaximum": true,
           |                    "exclusiveMinimum": true,
           |                    "maximum": 90,
@@ -53,7 +53,7 @@ object Json extends Model {
           |                    "type": "number"
           |                },
           |                "lng": {
-          |                    "id": "#/properties/location/properties/lng",
+          |                    "id": "#/properties/home/properties/lng",
           |                    "exclusiveMaximum": true,
           |                    "exclusiveMinimum": true,
           |                    "maximum": 180,
